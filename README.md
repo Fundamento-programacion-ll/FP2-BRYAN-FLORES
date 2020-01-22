@@ -18,7 +18,7 @@
 ### **Para poner link:** [_**--->YOUTUBE<---**_](https://www.youtube.com/)
 
 
-![YOUTUBE](https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1280px-YouTube_full-color_icon_%282017%29.svg.png)
+![YOUTUBE](https://lh3.googleusercontent.com/vA4tG0v4aasE7oIvRIvTkOYTwom07DfqHdUPr6k7jmrDwy_qA_SonqZkw6KX0OXKAdk)
 
 
 # **Código Validar Cédula Ecuatoriana**
@@ -73,3 +73,13 @@ public static void main(String[] args) {
 | Edad | Nombre | Apellido |
 |---|---|---|
 | 20 | Bryan | Flores |
+
+# Líneas
+
+***
+---
+
+# Miniatura de Videos
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=tbneQDc2H3I" target="_blank"> <img src=http://img.youtube.com/vi/tbneQDc2H3I/0.jpg> </a>
+
+[![imagen video](http://img.youtube.com/vi/tbneQDc2H3I/0.jpg)](http://www.youtube.com/watch?feature=player_embedded&v=tbneQDc2H3I)
