@@ -6,7 +6,9 @@
 package Vista;
 
 import Controlador.Controlador;
-import Modelo.Modelo;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,14 +16,13 @@ import Modelo.Modelo;
  */
 public class Listar extends javax.swing.JFrame {
     
-    Modelo nuevoArticulo = new Modelo();
-    Controlador articuloControlador=new Controlador();
 
     /**
      * Creates new form Listar
      */
     public Listar() {
         initComponents();
+        txt_Buscar.setText("");
     }
 
     /**
@@ -82,19 +83,28 @@ public class Listar extends javax.swing.JFrame {
 
     private void btn_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BuscarActionPerformed
         
+       
+        Controlador c=new Controlador();
+        
+        if ("".equals(txt_Buscar.getText())){
+        
+            c.BuscarTodo();
+        
+        }
+        
+        else if (cmb_Busqueda.getSelectedItem()=="Id"){
+        
+          c.BuscarArticuloId(Integer.parseInt(txt_Buscar.getText()));
+        
+        }
+        
+        else if(cmb_Busqueda.getSelectedItem() == "Nombre"){
+        
+        c.BuscarNombre(txt_Buscar.getText());
+        
+        }
         
         
-//        if (cmb_Busqueda.getSelectedItem()=="Id"){
-//        
-//            articuloControlador.BuscarArticuloId(Integer.parseInt(txt_Buscar.getText()));
-//        
-//        }
-//        
-//        if(cmb_Busqueda.getSelectedItem() == "Nombre"){
-//        
-//        articuloControlador.BuscarNombre(txt_Buscar.getText());
-//        
-//        }
         
         
     }//GEN-LAST:event_btn_BuscarActionPerformed
