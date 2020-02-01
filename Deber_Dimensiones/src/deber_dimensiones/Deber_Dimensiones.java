@@ -65,7 +65,7 @@ public class Deber_Dimensiones{
                             triPer.Perimetro();
                             
                             break;
-                            default: JOptionPane.showMessageDialog(null, "ERROR Opción Ingresada Incorecta");
+                            default: JOptionPane.showMessageDialog(null, "Opción Ingresada Incorecta", "ERROR", 0);
                             break;
                     
                     }
@@ -105,7 +105,7 @@ public class Deber_Dimensiones{
                             PerC.Perimetro();
                             
                             break;
-                            default: JOptionPane.showMessageDialog(null, "ERROR Opción Ingresada Incorecta");
+                            default: JOptionPane.showMessageDialog(null, "Opción Ingresada Incorecta", "ERROR", 0);
                             break;
                     
                     }
@@ -121,7 +121,7 @@ public class Deber_Dimensiones{
                     
                     break;
                     
-                    default: JOptionPane.showMessageDialog(null, "ERROR Opción Ingresada Incorecta");
+                    default: JOptionPane.showMessageDialog(null, "Opción Ingresada Incorecta", "ERROR", 0);
                     break;
         }
     }
