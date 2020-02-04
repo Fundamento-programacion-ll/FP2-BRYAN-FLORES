@@ -12,10 +12,22 @@ package deber_polimorfismo;
 public abstract class Transaccion {
     
     private int cuenta;
+    private String user;
 
-    public Transaccion(int cuenta) {
+    public Transaccion(int cuenta, String user) {
         this.cuenta = cuenta;
+        this.user = user;
     }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+
 
     public int getCuenta() {
         return cuenta;
@@ -30,5 +42,7 @@ public abstract class Transaccion {
     }
     
     public abstract String ejecutar();
+    
+    
     
 }

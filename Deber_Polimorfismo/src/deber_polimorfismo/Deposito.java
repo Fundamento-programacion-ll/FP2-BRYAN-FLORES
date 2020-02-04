@@ -13,14 +13,12 @@ public class Deposito extends Transaccion{
     
     double Deposito;
 
-    public Deposito(int cuenta) {
-        super(cuenta);
-    }
-
-    public Deposito(double Deposito, int cuenta) {
-        super(cuenta);
+    public Deposito(double Deposito, int cuenta, String user) {
+        super(cuenta, user);
         this.Deposito = Deposito;
     }
+
+
 
     public double getDeposito() {
         return Deposito;
@@ -29,8 +27,6 @@ public class Deposito extends Transaccion{
     public void setDeposito(double Deposito) {
         this.Deposito = Deposito;
     }
-
-    
     
     @Override
     public String ejecutar() {

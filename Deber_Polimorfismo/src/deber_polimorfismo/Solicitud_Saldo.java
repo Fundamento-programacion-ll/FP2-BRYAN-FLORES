@@ -11,18 +11,11 @@ package deber_polimorfismo;
  */
 public class Solicitud_Saldo extends Transaccion{
     
-    double saldo;
+    double saldo = 1000;
 
-    public Solicitud_Saldo(int cuenta) {
-        super(cuenta);
-    }
-
-    public Solicitud_Saldo(double saldo, int cuenta) {
-        super(cuenta);
-        this.saldo = saldo;
-    }
-
-    public double getSaldo() {
+    public Solicitud_Saldo(int cuenta, String user) {
+        super(cuenta, user);
+    }    public double getSaldo() {
         return saldo;
     }
 

@@ -5,6 +5,8 @@
  */
 package deber_polimorfismo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bryan
@@ -16,22 +18,30 @@ public class Deber_Polimorfismo {
      */
     public static void main(String[] args) {
         
+        Cuenta relleno=new Cuenta(0, "");
+        relleno.relleno();
         
-        Retiros r=new Retiros(10, 100000);
+        int op = 0;
         
-        System.out.println("Cuenta # "+r.ObtenCuenta());
+        while(1 == 1){
         
-        System.out.println(r.ejecutar());
+        String user = JOptionPane.showInputDialog(null, "Ingrese su Usuario");
         
-        Deposito d=new Deposito(15, r.ObtenCuenta());
+        int cuenta = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de Cuenta"));
         
-        System.out.println(d.ejecutar());
+        Cuenta c=new Cuenta(cuenta, user);
         
-        Solicitud_Saldo ss=new Solicitud_Saldo(100, r.ObtenCuenta());
+        if(c.VerificarCuenta(cuenta, user) == true){
         
-        System.out.println(ss.ejecutar());
+            do{
+            
+        op = Integer.parseInt(JOptionPane.showInputDialog
+        (null, "Cuenta # "+cuenta+"\n1. Consultar Saldo \n2.Depositar\n3. Retirar\n4. Salir", user, 1));
         
+            }while (op != 4);
+        }
         
+        else {JOptionPane.showMessageDialog(null, "Cuenta Incorrecta", "Error", 0);}
     }
-    
+    }
 }

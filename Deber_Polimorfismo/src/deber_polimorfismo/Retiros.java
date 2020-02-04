@@ -13,14 +13,11 @@ public class Retiros extends Transaccion{
     
     double retiro;
 
-    public Retiros(int cuenta) {
-        super(cuenta);
-    }
-
-    public Retiros(double retiro, int cuenta) {
-        super(cuenta);
+    public Retiros(double retiro, int cuenta, String user) {
+        super(cuenta, user);
         this.retiro = retiro;
     }
+    
 
     public double getRetiro() {
         return retiro;
@@ -30,8 +27,6 @@ public class Retiros extends Transaccion{
         this.retiro = retiro;
     }
     
-    
-
     @Override
     public String ejecutar() {
         return "Retiro: "+retiro;
