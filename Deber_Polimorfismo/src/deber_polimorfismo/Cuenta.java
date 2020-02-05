@@ -5,7 +5,6 @@
  */
 package deber_polimorfismo;
 
-import com.sun.xml.internal.bind.v2.schemagen.Util;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -66,7 +65,7 @@ public class Cuenta extends Transaccion{
         
     }
     
-    public void AgregarUsuario(){
+    public void AgregarUsuario(int cont){
         
         String usuario = JOptionPane.showInputDialog(null, "Ingrese el nuevo usuario", "Ingreso de Usuario", 1);
         int Cuenta = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cuenta del Usuario: "+usuario, "Ingreso de Cuenta", 1));

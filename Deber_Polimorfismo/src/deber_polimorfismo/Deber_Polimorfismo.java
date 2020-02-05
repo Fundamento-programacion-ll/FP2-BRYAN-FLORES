@@ -21,6 +21,7 @@ public class Deber_Polimorfismo {
         Cuenta c=new Cuenta(1000, "Bryan");
         
         int op = 0;
+        int cont = 0;
         
         c.relleno();
         
@@ -77,8 +78,10 @@ public class Deber_Polimorfismo {
                 
             case 4:
 
+                cont++;
+                
                     Cuenta cue=new Cuenta(cuenta, user);
-                    cue.AgregarUsuario();
+                    cue.AgregarUsuario(cont);
                 
                 break;
                 
