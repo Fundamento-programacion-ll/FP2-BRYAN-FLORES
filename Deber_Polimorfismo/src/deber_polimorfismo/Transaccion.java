@@ -41,7 +41,7 @@ public abstract class Transaccion {
     return cuenta;
     }
     
-    public abstract String ejecutar();
+    public abstract void ejecutar();
     
     
     

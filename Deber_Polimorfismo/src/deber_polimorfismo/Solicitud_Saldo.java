@@ -5,6 +5,8 @@
  */
 package deber_polimorfismo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bryan
@@ -25,9 +27,8 @@ public class Solicitud_Saldo extends Transaccion{
 
     
     @Override
-    public String ejecutar() {
-        
-        return "Saldo: "+saldo;
+    public void ejecutar() {
+        JOptionPane.showMessageDialog(null, "$ "+saldo, "Saldo", 1);
     }
     
 }

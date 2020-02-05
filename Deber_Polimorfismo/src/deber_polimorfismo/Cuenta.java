@@ -6,6 +6,8 @@
 package deber_polimorfismo;
 
 import com.sun.xml.internal.bind.v2.schemagen.Util;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,37 +15,43 @@ import com.sun.xml.internal.bind.v2.schemagen.Util;
  */
 public class Cuenta extends Transaccion{
     
-    private int cuenta[]=new int[10];
-    private String user[]=new String[10];
+     ArrayList listaCuenta=new ArrayList();
+     ArrayList listaUser=new ArrayList();
+    
+    
+    
  
     public Cuenta(int cuenta, String user) {
         super(cuenta, user);
     }
     
     public void relleno(){
-    for (int i=0; i<10; i++){
+    
+    listaCuenta.add(1000);
+    listaUser.add("Bryan");
         
-        this.cuenta[i]=000;
-        this.user[i]="Bryan";
-        
-    }
     }
     
     public boolean VerificarCuenta(int cuenta, String user){
-
-        
+       
         boolean aprobacion = false;
         int guia=0;
         
+        System.out.println(listaCuenta.get(guia));
+        System.out.println(listaUser.get(guia));
         
         
-        for (int i=0; i<10; i++){
         
-            if(this.cuenta[i] == cuenta && this.user[i].equalsIgnoreCase(user))
-            {guia = 1;
+        for (int i=0; i<listaCuenta.size(); i++){
             
-            setCuenta(this.cuenta[i]);
-            setUser(this.user[i]);
+            int acc = Integer.parseInt(listaCuenta.get(i).toString())*1;
+            String us = listaUser.get(i) + "";
+            
+            if( acc == cuenta && us.equals(user)){
+            guia = 1;
+            
+                setCuenta(cuenta);
+                setUser(user);
             
             }
         }
@@ -54,8 +62,32 @@ public class Cuenta extends Transaccion{
     }
 
     @Override
-    public String ejecutar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void ejecutar() {
+        
     }
     
-}
+    public void AgregarUsuario(){
+        
+        String usuario = JOptionPane.showInputDialog(null, "Ingrese el nuevo usuario", "Ingreso de Usuario", 1);
+        int Cuenta = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cuenta del Usuario: "+usuario, "Ingreso de Cuenta", 1));
+    
+        listaUser.add(usuario);
+        listaCuenta.add(Cuenta);
+        
+        JOptionPane.showMessageDialog(null, "Usuario Agregado", "Agregar Usuario", 1);
+        }
+        
+    public void listar(){
+    
+    for (int i=0; i<listaCuenta.size(); i++){
+            
+            System.out.println(listaCuenta.get(i));
+        System.out.println(listaUser.get(i));
+            
+            }
+    }
+    
+    }
+
+    
+

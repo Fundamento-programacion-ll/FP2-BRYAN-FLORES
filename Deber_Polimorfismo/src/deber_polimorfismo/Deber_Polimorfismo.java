@@ -18,10 +18,11 @@ public class Deber_Polimorfismo {
      */
     public static void main(String[] args) {
         
-        Cuenta relleno=new Cuenta(0, "");
-        relleno.relleno();
+        Cuenta c=new Cuenta(1000, "Bryan");
         
         int op = 0;
+        
+        c.relleno();
         
         while(1 == 1){
         
@@ -29,16 +30,69 @@ public class Deber_Polimorfismo {
         
         int cuenta = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de Cuenta"));
         
-        Cuenta c=new Cuenta(cuenta, user);
+        c.VerificarCuenta(cuenta, user);
         
         if(c.VerificarCuenta(cuenta, user) == true){
         
             do{
             
         op = Integer.parseInt(JOptionPane.showInputDialog
-        (null, "Cuenta # "+cuenta+"\n1. Consultar Saldo \n2.Depositar\n3. Retirar\n4. Salir", user, 1));
+        (null, "Cuenta # "+cuenta+"\n1. Consultar Saldo \n2.Depositar\n3. Retirar\n4. Agregar Usuario\n5. Salir", user, 1));
         
-            }while (op != 4);
+        switch (op){
+        
+            case 1: Solicitud_Saldo ss=new Solicitud_Saldo(cuenta, user);
+                    ss.ejecutar();
+                break;
+            case 2:
+                
+                double deposito = -1;
+                
+                while (deposito<0){
+                
+                deposito = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el Monto a Depositar", "Depósito", 1));
+                
+                if (deposito < 0){JOptionPane.showMessageDialog(null, "Cantidad Ingresada Incorrecta", "ERROR", 0);}
+                else{Deposito d=new Deposito(deposito, cuenta, user);
+                d.ejecutar();}
+                }
+                break;
+                
+            case 3:
+                
+                double Retiro = -1;
+                
+                Solicitud_Saldo saldo=new Solicitud_Saldo(cuenta, user);
+                
+                while (Retiro<0 || Retiro>saldo.getSaldo()){
+                
+                Retiro = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el Monto a Retirar", "Retiro", 1));
+                
+                if (Retiro < 0 || Retiro > saldo.getSaldo()){JOptionPane.showMessageDialog(null, "Cantidad Ingresada Incorrecta", "ERROR", 0);}
+                else{Retiros r=new Retiros(Retiro, cuenta, user);
+                r.ejecutar();}
+                }
+                
+                break;
+                
+            case 4:
+
+                    Cuenta cue=new Cuenta(cuenta, user);
+                    cue.AgregarUsuario();
+                
+                break;
+                
+            case 5: JOptionPane.showMessageDialog(null, "Gracias por su visita", "Saliendo...", 1);
+            
+            c.listar();
+                break;
+                
+            default: JOptionPane.showMessageDialog(null, "Opción Ingresada Incorrecta", "ERROR", 0);
+                break;
+        
+        }
+        
+            }while (op != 5);
         }
         
         else {JOptionPane.showMessageDialog(null, "Cuenta Incorrecta", "Error", 0);}

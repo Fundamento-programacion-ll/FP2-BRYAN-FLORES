@@ -5,6 +5,8 @@
  */
 package deber_polimorfismo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bryan
@@ -28,8 +30,10 @@ public class Retiros extends Transaccion{
     }
     
     @Override
-    public String ejecutar() {
-        return "Retiro: "+retiro;
+    public void ejecutar() {
+        
+        JOptionPane.showMessageDialog(null, "Retiro Correcto", "Retiro", 1);
+        
     }
     
 }

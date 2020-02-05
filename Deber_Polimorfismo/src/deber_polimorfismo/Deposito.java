@@ -5,6 +5,8 @@
  */
 package deber_polimorfismo;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bryan
@@ -29,8 +31,8 @@ public class Deposito extends Transaccion{
     }
     
     @Override
-    public String ejecutar() {
-        return "Deposito: "+Deposito;
+    public void ejecutar() {
+    JOptionPane.showMessageDialog(null, "Monto Ingresado", "Depósito", 1);
     }
     
 }
