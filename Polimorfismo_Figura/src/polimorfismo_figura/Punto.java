@@ -63,6 +63,11 @@ String datos = JOptionPane.showInputDialog(null, "Ingrese los elementos separado
         this.y = Integer.parseInt(tokkens.nextToken());
 
 }
+
+    @Override
+    public void GetArea() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

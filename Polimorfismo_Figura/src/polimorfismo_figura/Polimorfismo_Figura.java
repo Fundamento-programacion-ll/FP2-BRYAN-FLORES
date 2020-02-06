@@ -48,6 +48,8 @@ public class Polimorfismo_Figura {
         
         JFrame ventana=new JFrame();
         
+            System.out.println(circulo);
+        
         ventana.add(circulo);
         
         ventana.setSize(700, 400);

@@ -58,5 +58,10 @@ public class Rectangulo extends Figura{
         g.drawRect(10, 10, this.ladoMayor, this.ladoMenor);
         
     }
+
+    @Override
+    public void GetArea() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

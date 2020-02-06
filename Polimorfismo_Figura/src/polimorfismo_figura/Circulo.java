@@ -15,7 +15,9 @@ import javax.swing.JOptionPane;
  */
 public class Circulo extends Punto{
     
+    static final double PI = 3.1416;
     int radio;
+    double area;
 
     public Circulo(int radio, int x, int y) {
         super(x, y);
@@ -44,7 +46,7 @@ public class Circulo extends Punto{
 
     @Override
     public String toString() {
-        return "Circulo{" + "radio=" + this.radio + '}';
+        return "Circulo{" + "radio=" + this.radio + " Area="+Area()+'}';
     }
     
     public void paint(Graphics g) {
@@ -52,6 +54,13 @@ public class Circulo extends Punto{
         g.setColor(Color.GREEN);
         g.drawOval(getX(), getY(), this.radio, this.radio);
     
+    }
+    
+    public double Area(){
+    
+        area = PI*this.radio*this.radio;
+        
+    return area;
     }
     
 }

@@ -16,5 +16,6 @@ public abstract class Figura extends Canvas{
     
     @Override
     public abstract void paint(Graphics g);
-    
+ 
+    public abstract void GetArea();
 }

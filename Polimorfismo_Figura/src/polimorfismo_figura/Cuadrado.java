@@ -51,5 +51,10 @@ public class Cuadrado extends Figura{
         g.drawRect(100, 100, this.lado, this.lado);
         
     }
+
+    @Override
+    public void GetArea() {
+        
+    }
     
 }
