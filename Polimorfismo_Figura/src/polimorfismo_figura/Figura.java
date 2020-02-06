@@ -5,15 +5,16 @@
  */
 package polimorfismo_figura;
 
+import java.awt.Canvas;
 import java.awt.Graphics;
-import javax.swing.JPanel;
 
 /**
  *
  * @author Bryan
  */
-public abstract class Figura extends JPanel{
+public abstract class Figura extends Canvas{
     
-    public abstract void Dibujo(Graphics g);
+    @Override
+    public abstract void paint(Graphics g);
     
 }

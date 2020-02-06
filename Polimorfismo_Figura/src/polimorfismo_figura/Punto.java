@@ -42,12 +42,9 @@ public class Punto extends Figura{
     }
 
     @Override
-    public void Dibujo(Graphics g) {
+    public void paint(Graphics g) {
         
-        g.setColor(Color.BLACK);
-        
-        System.out.println(this.x+" "+this.y);
-        
+        g.setColor(Color.BLUE);
         g.fillOval(this.x, this.y, 30, 30);
         
     }

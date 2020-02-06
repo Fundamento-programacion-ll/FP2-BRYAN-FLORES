@@ -5,7 +5,6 @@
  */
 package polimorfismo_figura;
 
-import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -20,14 +19,20 @@ public class Polimorfismo_Figura {
      */
     public static void main(String[] args) {
         
+        Menu();
+        
+    }
+    
+    public static void Menu(){
+        
         Punto punto=new Punto(25, 20);
         Circulo circulo = new Circulo(25, 20);
+        Cuadrado cuadrado = new Cuadrado(0);
+        Rectangulo rectangulo = new Rectangulo(0, 0);
+    
+    String opcion = JOptionPane.showInputDialog(null, "Escriba una Opción:\n- PUNTO\n- CIRCULO\n- CUADRADO\n- RECTANGULO", "MENU", 1);
         
-        String opcion = JOptionPane.showInputDialog(null, "Escriba en Mayúsculas una Opción:\n- PUNTO\n- CIRCULO", "MENU", 1);
-        
-        if(opcion.equalsIgnoreCase("Punto")){punto.Punto();}
-        else if(opcion.equalsIgnoreCase("Circulo")){circulo.Circulo();}
-        else {JOptionPane.showMessageDialog(null, "Opcion Ingresada Incorrecta", "ERROR", 0);}
+        if(opcion.equalsIgnoreCase("Punto")){punto.Punto();
         
         JFrame ventana=new JFrame();
         
@@ -37,8 +42,51 @@ public class Polimorfismo_Figura {
         
         ventana.setVisible(true);
         
-        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);}
+        else if(opcion.equalsIgnoreCase("Circulo")){circulo.Circulo();
         
+        JFrame ventana=new JFrame();
+        
+        ventana.add(circulo);
+        
+        ventana.setSize(700, 400);
+        
+        ventana.setVisible(true);
+        
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }
+        else if(opcion.equalsIgnoreCase("Cuadrado")){
+            
+            cuadrado.Cuadrado();
+        
+        JFrame ventana=new JFrame();
+        
+        ventana.add(cuadrado);
+        
+        ventana.setSize(700, 400);
+        
+        ventana.setVisible(true);
+        
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }
+        
+        else if(opcion.equalsIgnoreCase("Rectangulo")){
+            
+            rectangulo.Rectangulo();
+        
+        JFrame ventana=new JFrame();
+        
+        ventana.add(rectangulo);
+        
+        ventana.setSize(700, 400);
+        
+        ventana.setVisible(true);
+        
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }
+        
+        else {JOptionPane.showMessageDialog(null, "Opcion Ingresada Incorrecta", "ERROR", 0);}
+    
     }
     
 }

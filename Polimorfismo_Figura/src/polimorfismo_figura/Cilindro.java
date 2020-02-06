@@ -9,6 +9,29 @@ package polimorfismo_figura;
  *
  * @author Bryan
  */
-public class Cilindro {
+public class Cilindro extends Circulo{
+    
+    int altura;
+
+    public Cilindro(int altura, int radio, int x, int y) {
+        super(radio, x, y);
+        this.altura = altura;
+    }
+
+    
+    
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+    
+    public void paint(){
+    
+        
+    
+    }
     
 }
