@@ -6,6 +6,8 @@
 package comparadores;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,9 +27,10 @@ public class Pais {
         Provincias provincia;
         do {            
             provincia = new Provincias();
+            provincia.Provincias();
             Agregar(provincia);
-            opcion = JOptionPane.showConfirmDialog(null, "Mas Provincias", "Continuar",JOptionPane.YES_NO_CANCEL_OPTION);
-        } while (opcion==JOptionPane.YES_NO_CANCEL_OPTION); 
+            opcion = JOptionPane.showConfirmDialog(null, "Mas Provincias", "Continuar",JOptionPane.YES_NO_OPTION);
+        } while (opcion==JOptionPane.YES_NO_OPTION); 
         
     }
 
@@ -46,5 +49,22 @@ public class Pais {
         this.ListaProvincias.add(provincia);
     
     }
+    
+    public void ordenarPorNombreProvincia(){
+    
+        Collections.sort(ListaProvincias, new comparadores.Comparador());
+    
+    }
+    
+    public void ordenarPorNumeroHabitantes(){
+    
+        Collections.sort(ListaProvincias, new comparadores.Comparador_N_Habitates());
+    
+    }
+    @Override
+    public String toString() {
+        return "Nombre: "+getListaProvincias();
+    }
+    
     
 }

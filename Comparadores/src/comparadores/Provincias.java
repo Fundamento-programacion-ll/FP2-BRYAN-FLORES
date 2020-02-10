@@ -53,6 +53,11 @@ public class Provincias {
     public void setNumeroHabitantes(int numeroHabitantes) {
         this.numeroHabitantes = numeroHabitantes;
     }
+
+    @Override
+    public String toString() {
+        return "Nombre: "+getNombreProvincia()+" Habitantes: "+getNumeroHabitantes();
+    }
     
     
     

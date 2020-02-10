@@ -13,9 +13,26 @@ import java.util.Comparator;
  */
 public class Comparador implements Comparator<Object>{
 
+    int CompararNombre;
+    Provincias provincia1, provincia2;
+    
     @Override
-    public int compare(Object o1, Object o2) {
-        return 0;
+    public int compare(Object provincia1, Object provincia2) {
+        
+        this.provincia1 = (Provincias) provincia1;
+        this.provincia2 = (Provincias) provincia2;
+        
+        CompararNombre = this.provincia1.getNombreProvincia().compareToIgnoreCase(this.provincia2.getNombreProvincia());
+        
+        return CompararNombre;
     }
+
+    @Override
+    public String toString() {
+        return "Comparador{" + "CompararNombre=" + CompararNombre + ", provincia1=" + provincia1 + ", provincia2=" + provincia2 + '}';
+    }
+    
+    
+    
     
 }
