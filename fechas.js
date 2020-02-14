@@ -1,4 +1,4 @@
-var arreglo = [
+/*var arreglo = [
 
   {
 
@@ -66,6 +66,19 @@ console.log(nuevoArreglo);
 
 console.log(AgregarUsuario("Jose", "Obando", 20));
 console.log(buscarUsuario(arreglo, "Kevin", "Melo", 30));
-console.log(EliminarUsuario("Bryan"));
+console.log(EliminarUsuario("Bryan")); */
 
+var  fecha = new Date();
+
+//console.log(fecha.getDate() + "/" +fecha.getMonth()+1 + "/" + fecha.getFullYear());
+
+const moment = require("moment");
+
+moment.locale("es");
+
+const horaActual = moment().format("hh:mm:ss");
+
+//console.log(moment().subtract(3, "hours").toString());
+
+console.log(typeof moment().toObject()["milliseconds"]);
 
